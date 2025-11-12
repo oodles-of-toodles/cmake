@@ -41,7 +41,7 @@
 *.dwo
 
 # IDEs
-\.vscode
+**/.vscode/
 
 # CMake section
 CMakeLists.txt.user
@@ -56,5 +56,5 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
-\build
+**/build/
 
