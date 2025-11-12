@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
   // TODO9: Use the mathfunctions::sqrt function
   // calculate square root
   double const outputValue = std::sqrt(inputValue);
+  double const newValue = std::sqrt(inputValue);
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
 }
