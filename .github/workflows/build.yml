@@ -6,11 +6,11 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  build:
-    name: Build
+  Step1:
+    name: Step 1
     runs-on: ubuntu-latest
     env:
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
+      BUILD_WRAPPER_OUT_DIR: build # Directory where build-wrapper output will be placed
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,6 +19,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v6
       - name: Run Build Wrapper
         run: |
+          cd Step1
           mkdir build
           cmake -S . -B build
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build build/ --config Release
@@ -28,4 +29,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Put the name of your token here
         with:
           args: >
-            --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json"
+            --define sonar.cfamily.compile-commands="Step1/${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json"
+          projectBaseDir: Step1/
