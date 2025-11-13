@@ -2,13 +2,17 @@ cmake_minimum_required(VERSION 3.23)
 
 
 # TODO1: Implement MacroAppend
+# ${ListVar} exapnds to the name of the list passed to this macro - Original in this case
+# ${${ListVar}} expands to the list referred to
+# ${Value} expands to the string passed in
 macro(MacroAppend ListVar Value)
-
+  set(${ListVar} "${${ListVar}};${Value}")
 endmacro()
 
 # TODO2: Call MacroAppend, then return the value from FuncAppend
 function(FuncAppend ListVar Value)
-
+  MacroAppend(${ListVar} ${Value})
+  set(${ListVar}  "${${ListVar}}" PARENT_SCOPE)
 endfunction()
 
 
