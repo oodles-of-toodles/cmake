@@ -40,4 +40,4 @@ jobs:
         with:
           args: >
             --define sonar.cfamily.compile-commands=${{ github.job }}/${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json
-          projectBaseDir: cmake/Step1
+          projectBaseDir: Step1
