@@ -1,4 +1,4 @@
-name: Build
+name: Step 3
 on:
   push:
     branches:
