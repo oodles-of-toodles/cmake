@@ -17,10 +17,6 @@ int main(int argc, char* argv[])
 
   // convert input to double
   double const inputValue = std::stod(argv[1]);
-  // Add some code here to trigger a scan
-  double const jim = std::stod(argv[1]);
-  // Use the variable jim
-  std::cout << jim;
 
   // calculate square root
   double const outputValue = mathfunctions::sqrt(inputValue);
