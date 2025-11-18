@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'cmake/Step3/**'
+      - 'Step3/**'
       - '.github/workflows/build-step3.yml'
   pull_request:
     types: [opened, synchronize, reopened]
