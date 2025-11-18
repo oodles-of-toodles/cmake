@@ -27,7 +27,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v6
 
       - name: Run Build Wrapper
-        working-directory: cmake/Step3
+        working-directory: Step3
         run: |
           rm -fr ${{ env.BUILD_WRAPPER_OUT_DIR }}
           cmake -S . -B ${{ env.BUILD_WRAPPER_OUT_DIR }}
