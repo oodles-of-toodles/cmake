@@ -30,7 +30,7 @@ jobs:
         working-directory: Step3
         run: |
           rm -fr ${{ env.BUILD_WRAPPER_OUT_DIR }}
-          cmake -S . -B ${{ env.BUILD_WRAPPER_OUT_DIR }}
+          cmake -S .
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build ${{ env.BUILD_WRAPPER_OUT_DIR }}
 
       - name: SonarQube Scan
